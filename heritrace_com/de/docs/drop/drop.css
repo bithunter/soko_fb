@@ -1,0 +1,53 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.position {display:none; width:480px}
+
+.cdtxt {width:480px; resize:none; height:50px}
+.cdrdiv {width:220px}
+.cdldiv {width:220px; float:right}
+.text {width:210px}
+
+.cdsupl {float:left; width:250px; background-color:#F1E4E4}
+.saveBtn {}
+.cancelBtn {}
+
+.cdlcont {float:left}
+.cdrcont {width:320px; min-height: 80px; float:left}
+.clear {
+	clear: both;
+}
+	
+#newpic {
+  background-color:rgb(252, 252, 252);
+  height:420px;
+  width: 480px;
+  padding: 0;
+  margin-top:2px;
+  overflow:hidden;
+  display:block;
+}
+
+#post-controls {
+        height: 40px;
+		width: 480px;
+        margin: 0px;
+        padding: 2px 2px;
+}
+
+.controls {
+        margin-top: 16px;
+        border: 1px solid transparent;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        height: 32px;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+#mapcontainer {
+        height: 500px;
+		width: 480px;
+        margin: 0px;
+        padding: 0px
+}

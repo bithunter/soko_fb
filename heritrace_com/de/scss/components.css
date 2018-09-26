@@ -1,0 +1,68 @@
+/*
+Error: Undefined variable: "$enable-print-styles".
+        on line 11 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/bootstrap/_print.scss
+        from line 5 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/components.scss
+
+6: 
+7: // Core CSS
+8: @import "./bootstrap/_root.scss";
+9: @import "./bootstrap/_reboot.scss";
+10: @import "./bootstrap/_type.scss";
+11: @import "./bootstrap/_images.scss";
+12: @import "./bootstrap/_code.scss";
+13: @import "./bootstrap/_grid.scss";
+14: @import "./bootstrap/_tables.scss";
+15: @import "./bootstrap/_forms.scss";
+16: @import "./bootstrap/_buttons.scss";
+
+Backtrace:
+/Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/bootstrap/_print.scss:11
+/Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/components.scss:5
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/variable.rb:49:in `_perform'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:300:in `visit_if'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/stack.rb:79:in `block in with_base'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/stack.rb:135:in `with_frame'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/stack.rb:79:in `with_base'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:329:in `block (2 levels) in visit_import'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:329:in `map'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:329:in `block in visit_import'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/stack.rb:88:in `block in with_import'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/stack.rb:135:in `with_frame'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/stack.rb:88:in `with_import'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:326:in `visit_import'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/stack.rb:79:in `block in with_base'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/stack.rb:135:in `with_frame'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/stack.rb:79:in `with_base'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/base.rb:52:in `map'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:161:in `visit'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:10:in `visit'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/root_node.rb:20:in `render'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/engine.rb:290:in `render'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/exec/sass_scss.rb:400:in `run'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/exec/base.rb:52:in `parse'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/exec/base.rb:19:in `parse!'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/bin/sass:13:in `<top (required)>'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/bin/sass:37:in `load'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/bin/sass:37:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined variable: \"$enable-print-styles\".\A         on line 11 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/bootstrap/_print.scss\A         from line 5 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/components.scss\A \A 6: \A 7: // Core CSS\A 8: @import \"./bootstrap/_root.scss\";\A 9: @import \"./bootstrap/_reboot.scss\";\A 10: @import \"./bootstrap/_type.scss\";\A 11: @import \"./bootstrap/_images.scss\";\A 12: @import \"./bootstrap/_code.scss\";\A 13: @import \"./bootstrap/_grid.scss\";\A 14: @import \"./bootstrap/_tables.scss\";\A 15: @import \"./bootstrap/_forms.scss\";\A 16: @import \"./bootstrap/_buttons.scss\";"; }
