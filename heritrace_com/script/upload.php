@@ -8,6 +8,7 @@ Bild auf Server hochladen und mit eindeutigem Namen versehen
 
 
 ****************************************************************/
+
 	include("../inc/htr_config.php");
 	include "mapdata.php";
 

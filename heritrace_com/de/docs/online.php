@@ -484,7 +484,7 @@ include("../../inc/mapsSelect.php");
 **
 **    News-Stream - Mittlere Hauptspalte
 **
-*******************************************-->
+********************************************-->
     <div class="col-lg-6">
 		<div id="newscol">
 
@@ -500,8 +500,6 @@ include("../../inc/mapsSelect.php");
             </div>
           </div>
         </li>
-
-
 
 
 <li class="media list-group-item p-4 mb-2">

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="alerts-custom.css" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3616487789" remote="3616487789" Dst="-1" />
+<file name="alerts-custom.scss" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3569449122" remote="3569449122" Dst="-1" />
+<file name="avatar-list.css" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556251" remote="3616556251" Dst="-1" />
+<file name="avatar-list.scss" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3569449122" remote="3569449122" Dst="-1" />
+<file name="buttons-custom.css" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3616487789" remote="3616487789" Dst="-1" />
+<file name="buttons-custom.scss" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3600881796" remote="3600881796" Dst="-1" />
+<file name="buttons-radius.css" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556251" remote="3616556251" Dst="-1" />
+<file name="buttons-radius.scss" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3569449122" remote="3569449122" Dst="-1" />
+<file name="cards-link-list.css" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556251" remote="3616556251" Dst="-1" />
+<file name="cards-link-list.scss" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3569449122" remote="3569449122" Dst="-1" />
+<file name="cards-profile.css" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3616487789" remote="3616487789" Dst="-1" />
+<file name="cards-profile.scss" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3600881796" remote="3600881796" Dst="-1" />
+<file name="container-custom.css" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3616487789" remote="3616487789" Dst="-1" />
+<file name="container-custom.scss" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3569449122" remote="3569449122" Dst="-1" />
+<file name="docs.css" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3616487791" remote="3616487791" Dst="-1" />
+<file name="docs.scss" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3600881796" remote="3600881796" Dst="-1" />
+<file name="dropdowns-custom.css" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3616487789" remote="3616487789" Dst="-1" />
+<file name="dropdowns-custom.scss" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3600881796" remote="3600881796" Dst="-1" />
+<file name="growl.css" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3616487790" remote="3616487790" Dst="-1" />
+<file name="growl.scss" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3569449122" remote="3569449122" Dst="-1" />
+<file name="icons.css" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3616487792" remote="3616487792" Dst="-1" />
+<file name="icons.scss" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3601764576" remote="3601764576" Dst="-1" />
+<file name="media-list-conversation.css" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3616487790" remote="3616487790" Dst="-1" />
+<file name="media-list-conversation.scss" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3600881796" remote="3600881796" Dst="-1" />
+<file name="media-list-stream.css" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3616487789" remote="3616487789" Dst="-1" />
+<file name="media-list-stream.scss" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3600881796" remote="3600881796" Dst="-1" />
+<file name="media-list-users.css" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3616487789" remote="3616487789" Dst="-1" />
+<file name="media-list-users.scss" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3600881796" remote="3600881796" Dst="-1" />
+<file name="media-list.css" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556251" remote="3616556251" Dst="-1" />
+<file name="media-list.scss" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3569449122" remote="3569449122" Dst="-1" />
+<file name="modals-custom.css" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3616487789" remote="3616487789" Dst="-1" />
+<file name="modals-custom.scss" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3569449122" remote="3569449122" Dst="-1" />
+<file name="nav-bordered.css" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3616487789" remote="3616487789" Dst="-1" />
+<file name="nav-bordered.scss" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3600881796" remote="3600881796" Dst="-1" />
+<file name="navbar-utilities.css" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3616487790" remote="3616487790" Dst="-1" />
+<file name="navbar-utilities.scss" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3569449122" remote="3569449122" Dst="-1" />
+<file name="profile-header.css" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3616487790" remote="3616487790" Dst="-1" />
+<file name="profile-header.scss" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3600881796" remote="3600881796" Dst="-1" />
+<file name="syntax.css" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3616487790" remote="3616487790" Dst="-1" />
+<file name="syntax.scss" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3600881796" remote="3600881796" Dst="-1" />
+<file name="text-inherit.css" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556253" remote="3616556253" Dst="-1" />
+<file name="text-inherit.scss" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3569449122" remote="3569449122" Dst="-1" />
+<file name="type-custom.css" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3616487789" remote="3616487789" Dst="-1" />
+<file name="type-custom.scss" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3600881796" remote="3600881796" Dst="-1" />
+<file name="zoom.css" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3616487789" remote="3616487789" Dst="-1" />
+<file name="zoom.scss" server="Mac OsX/Users/Andy/Google Drive/www/heritrace_nw/" local="3600896838" remote="3600896838" Dst="-1" />
+<file name="alerts-custom.css" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556251" remote="3616556251" Dst="-1" />
+<file name="alerts-custom.scss" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3569449122" remote="3569449122" Dst="-1" />
+<file name="avatar-list.css" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556251" remote="3616556251" Dst="-1" />
+<file name="avatar-list.scss" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3569449122" remote="3569449122" Dst="-1" />
+<file name="buttons-custom.css" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556251" remote="3616556251" Dst="-1" />
+<file name="buttons-custom.scss" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3600881796" remote="3600881796" Dst="-1" />
+<file name="buttons-radius.css" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556251" remote="3616556251" Dst="-1" />
+<file name="buttons-radius.scss" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3569449122" remote="3569449122" Dst="-1" />
+<file name="cards-link-list.css" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556251" remote="3616556251" Dst="-1" />
+<file name="cards-link-list.scss" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3569449122" remote="3569449122" Dst="-1" />
+<file name="cards-profile.css" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556251" remote="3616556251" Dst="-1" />
+<file name="cards-profile.scss" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3600881796" remote="3600881796" Dst="-1" />
+<file name="container-custom.css" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556251" remote="3616556251" Dst="-1" />
+<file name="container-custom.scss" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3569449122" remote="3569449122" Dst="-1" />
+<file name="docs.css" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556251" remote="3616556251" Dst="-1" />
+<file name="docs.scss" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3600881796" remote="3600881796" Dst="-1" />
+<file name="dropdowns-custom.css" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556251" remote="3616556251" Dst="-1" />
+<file name="dropdowns-custom.scss" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3600881796" remote="3600881796" Dst="-1" />
+<file name="growl.css" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556251" remote="3616556251" Dst="-1" />
+<file name="growl.scss" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3569449122" remote="3569449122" Dst="-1" />
+<file name="icons.css" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556252" remote="3616556252" Dst="-1" />
+<file name="icons.scss" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3601764576" remote="3601764576" Dst="-1" />
+<file name="media-list-conversation.css" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556251" remote="3616556251" Dst="-1" />
+<file name="media-list-conversation.scss" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3600881796" remote="3600881796" Dst="-1" />
+<file name="media-list-stream.css" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556251" remote="3616556251" Dst="-1" />
+<file name="media-list-stream.scss" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3600881796" remote="3600881796" Dst="-1" />
+<file name="media-list-users.css" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556251" remote="3616556251" Dst="-1" />
+<file name="media-list-users.scss" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3600881796" remote="3600881796" Dst="-1" />
+<file name="media-list.css" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556251" remote="3616556251" Dst="-1" />
+<file name="media-list.scss" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3569449122" remote="3569449122" Dst="-1" />
+<file name="modals-custom.css" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556251" remote="3616556251" Dst="-1" />
+<file name="modals-custom.scss" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3569449122" remote="3569449122" Dst="-1" />
+<file name="nav-bordered.css" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556251" remote="3616556251" Dst="-1" />
+<file name="nav-bordered.scss" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3600881796" remote="3600881796" Dst="-1" />
+<file name="navbar-utilities.css" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556251" remote="3616556251" Dst="-1" />
+<file name="navbar-utilities.scss" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3569449122" remote="3569449122" Dst="-1" />
+<file name="profile-header.css" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556251" remote="3616556251" Dst="-1" />
+<file name="profile-header.scss" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3600881796" remote="3600881796" Dst="-1" />
+<file name="syntax.css" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556252" remote="3616556252" Dst="-1" />
+<file name="syntax.scss" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3600881796" remote="3600881796" Dst="-1" />
+<file name="text-inherit.css" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556253" remote="3616556253" Dst="-1" />
+<file name="text-inherit.scss" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3569449122" remote="3569449122" Dst="-1" />
+<file name="type-custom.css" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556253" remote="3616556253" Dst="-1" />
+<file name="type-custom.scss" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3600881796" remote="3600881796" Dst="-1" />
+<file name="zoom.css" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3616556253" remote="3616556253" Dst="-1" />
+<file name="zoom.scss" server="Macintosh HD/Users/Andy/Google Drive/www/heritrace_nw/" local="3600896838" remote="3600896838" Dst="-1" />
+<file name="alerts-custom.css" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131781850510000000" remote="131781850510000000" Dst="2" />
+<file name="alerts-custom.scss" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131310779220000000" remote="131310743220000000" Dst="2" />
+<file name="avatar-list.css" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131781850510000000" remote="131781850510000000" Dst="2" />
+<file name="avatar-list.scss" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131310779220000000" remote="131310743220000000" Dst="2" />
+<file name="buttons-custom.css" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131781850510000000" remote="131781850510000000" Dst="2" />
+<file name="buttons-custom.scss" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131625105960000000" remote="131625069960000000" Dst="2" />
+<file name="buttons-radius.css" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131781850510000000" remote="131781850510000000" Dst="2" />
+<file name="buttons-radius.scss" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131310779220000000" remote="131310743220000000" Dst="2" />
+<file name="cards-link-list.css" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131781850510000000" remote="131781850510000000" Dst="2" />
+<file name="cards-link-list.scss" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131310779220000000" remote="131310743220000000" Dst="2" />
+<file name="cards-profile.css" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131781850510000000" remote="131781850510000000" Dst="2" />
+<file name="cards-profile.scss" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131625105960000000" remote="131625069960000000" Dst="2" />
+<file name="container-custom.css" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131781850510000000" remote="131781850510000000" Dst="2" />
+<file name="container-custom.scss" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131310779220000000" remote="131310743220000000" Dst="2" />
+<file name="docs.css" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131781850510000000" remote="131781850510000000" Dst="2" />
+<file name="docs.scss" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131625105960000000" remote="131625069960000000" Dst="2" />
+<file name="dropdowns-custom.css" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131781850510000000" remote="131781850510000000" Dst="2" />
+<file name="dropdowns-custom.scss" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131625105960000000" remote="131625069960000000" Dst="2" />
+<file name="growl.css" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131781850510000000" remote="131781850510000000" Dst="2" />
+<file name="growl.scss" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131310779220000000" remote="131310743220000000" Dst="2" />
+<file name="icons.css" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131781850520000000" remote="131781850520000000" Dst="2" />
+<file name="icons.scss" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131633933760000000" remote="131633897760000000" Dst="2" />
+<file name="media-list-conversation.css" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131781850510000000" remote="131781850510000000" Dst="2" />
+<file name="media-list-conversation.scss" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131625105960000000" remote="131625069960000000" Dst="2" />
+<file name="media-list-stream.css" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131781850510000000" remote="131781850510000000" Dst="2" />
+<file name="media-list-stream.scss" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131625105960000000" remote="131625069960000000" Dst="2" />
+<file name="media-list-users.css" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131781850510000000" remote="131781850510000000" Dst="2" />
+<file name="media-list-users.scss" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131625105960000000" remote="131625069960000000" Dst="2" />
+<file name="media-list.css" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131781850510000000" remote="131781850510000000" Dst="2" />
+<file name="media-list.scss" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131310779220000000" remote="131310743220000000" Dst="2" />
+<file name="modals-custom.css" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131781850510000000" remote="131781850510000000" Dst="2" />
+<file name="modals-custom.scss" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131310779220000000" remote="131310743220000000" Dst="2" />
+<file name="nav-bordered.css" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131781850510000000" remote="131781850510000000" Dst="2" />
+<file name="nav-bordered.scss" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131625105960000000" remote="131625069960000000" Dst="2" />
+<file name="navbar-utilities.css" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131781850510000000" remote="131781850510000000" Dst="2" />
+<file name="navbar-utilities.scss" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131310779220000000" remote="131310743220000000" Dst="2" />
+<file name="profile-header.css" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131781850510000000" remote="131781850510000000" Dst="2" />
+<file name="profile-header.scss" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131625105960000000" remote="131625069960000000" Dst="2" />
+<file name="syntax.css" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131781850520000000" remote="131781850520000000" Dst="2" />
+<file name="syntax.scss" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131625105960000000" remote="131625069960000000" Dst="2" />
+<file name="text-inherit.css" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131781850530000000" remote="131781850530000000" Dst="2" />
+<file name="text-inherit.scss" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131310779220000000" remote="131310743220000000" Dst="2" />
+<file name="type-custom.css" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131781850530000000" remote="131781850530000000" Dst="2" />
+<file name="type-custom.scss" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131625105960000000" remote="131625069960000000" Dst="2" />
+<file name="zoom.css" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131781850530000000" remote="131781850530000000" Dst="2" />
+<file name="zoom.scss" server="C:/Users/andre/Google Drive/www/heritrace_cloud/" local="131625256380000000" remote="131625220380000000" Dst="2" />
+</dwsync>
