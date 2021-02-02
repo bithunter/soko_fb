@@ -1,6 +1,6 @@
 /*
 Error: Undefined variable: "$gray-100".
-        on line 9 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/media-list-conversation.scss
+        on line 9 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/media-list-conversation.scss
 
 4:     margin-right: 5px;
 5:   }
@@ -15,7 +15,7 @@ Error: Undefined variable: "$gray-100".
 14:   }
 
 Backtrace:
-/Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/media-list-conversation.scss:9
+/Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/media-list-conversation.scss:9
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -72,4 +72,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$gray-100\".\A         on line 9 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/media-list-conversation.scss\A \A 4:     margin-right: 5px;\A 5:   }\A 6:   .media-body-text {\A 7:     position: relative;\A 8:     padding: 10px 15px;\A 9:     background-color: $gray-100;\A 10:     border-radius: 9px;\A 11:   }\A 12:   .media-body-text + .media-body-text {\A 13:     margin-top: 5px;\A 14:   }"; }
+  content: "Error: Undefined variable: \"$gray-100\".\A         on line 9 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/media-list-conversation.scss\A \A 4:     margin-right: 5px;\A 5:   }\A 6:   .media-body-text {\A 7:     position: relative;\A 8:     padding: 10px 15px;\A 9:     background-color: $gray-100;\A 10:     border-radius: 9px;\A 11:   }\A 12:   .media-body-text + .media-body-text {\A 13:     margin-top: 5px;\A 14:   }"; }

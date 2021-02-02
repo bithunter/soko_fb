@@ -15,25 +15,22 @@ Bild auf Server hochladen und mit eindeutigem Namen versehen
 
 if (!empty($_FILES)) {
 
-	$ds          = DIRECTORY_SEPARATOR;
-	$storeFolder = '../22062014';
+	$storeFolder = '../22062014/';
 	$name = $_FILES['file']['name'];
 	$data = file_get_contents($_FILES['file']['tmp_name']);
      
     $tempFile = $_FILES['file']['tmp_name'];             
 
-
-    $targetPath = $storeFolder . $ds;
      
-    $targetFile =  $targetPath . $name;
+    //$targetFile =  $storeFolder . $name;
 
 	// Jedes Bild bekommt einen eindeutigen Namen aus einer Prüfsumme des aktuellen Datums
 	// und der User-ID
 
 	$path_parts = pathinfo($name);
 	$nameNew = md5(date("d.m.Y H:i:s".$_SESSION['profileID'])).".".$path_parts['extension'];
-	rename($targetFile, $targetPath . $nameNew);
-	$targetFile =  $targetPath. $nameNew;
+	//rename($targetFile, $storeFolder . $nameNew);
+	$targetFile =  $storeFolder. $nameNew;
  
  	if (file_exists($targetFile)) {
 	  unlink($targetFile);
@@ -45,17 +42,15 @@ if (!empty($_FILES)) {
 
 		// in Testphase altes Bild löschen
 		$result = $mysqli->query("SELECT pictureName FROM posts WHERE postID = 10");
-		$row = $result->fetch_row(); 
 
-		if($row[0] > 0){
-   		 $delName = $result->fetch_object()->pictureName;
-		 if (file_exists($targetPath.$delName)) {
-		 	unlink($targetPath.$delName);
-			unlink($targetPath."small_".$delName);
-			unlink($targetPath."info_".$delName);
+		if($result->num_rows > 0){
+   		 $drow = $result->fetch_assoc();
+		 if (file_exists($storeFolder.$drow['pictureName'])) {
+		 	unlink($storeFolder.$drow['pictureName']);
+			unlink($storeFolder."small_".$drow['pictureName']);
+			unlink($storeFolder."info_".$drow['pictureName']);
 		 }
 		}
-
 
 		$adata = json_decode(extract_exif_geotags_coordinates($targetFile));
 
@@ -64,9 +59,16 @@ if (!empty($_FILES)) {
 
 		
 	$d=mktime($adata->{'hour'}, $adata->{'minute'}, $adata->{'second'}, $adata->{'month'}, $adata->{'day'}, $adata->{'year'});
-		
+
+		mysqli_query($mysqli,"SET NAMES 'utf8'");
+		mysqli_query($mysqli,"SET CHARACTER SET 'utf8'");
 		$mysqli->query("DELETE FROM `posts` WHERE `postID` = 10");		// in Testphase altes Bild löschen
-  		$mysqli->query("INSERT INTO `posts` (`postID`, `profileID`, `pictureDate`, `type`, `pictureName`, `pictureOrgName`, `latitude`, `longitude`) VALUES('10', '".$_SESSION['profileID']."', '". date("Y-m-d h:i:s", $d)."', '1', '".$nameNew."', '".$name."', '".$adata->{'latitude'}."', '".$adata->{'longitude'}."')");
+  		$sql="INSERT INTO posts (postID, profileID, pictureDate, type, pictureName, pictureOrgName, latitude, longitude, description) VALUES('10','".$_SESSION['profileID']."', '". date('Y-m-d h:i:s', $d)."', '1', '".$nameNew."', '".$name."', '".$adata->{'latitude'}."', '".$adata->{'longitude'}."','Tracing back the heritage')";
+		//$mysqli->query("INSERT INTO `posts` (`profileID`, `pictureDate`, `type`, `pictureName`, `pictureOrgName`, `latitude`, `longitude`) VALUES('".$_SESSION['profileID']."', '". date("Y-m-d h:i:s", $d)."', '1', '".$nameNew."', '".$name."', '".$adata->{'latitude'}."', '".$adata->{'longitude'}."')");
+		if (!mysqli_query($mysqli,$sql) === TRUE) {
+    			
+   			 echo "Error: " . $sql . "<br>" . $mysqli->error . "<br><br><br>";
+		}
   		$picID = mysqli_insert_id($mysqli);
 
 
@@ -103,15 +105,15 @@ Vorschaubild für den Newsfeed erstellen
 ****************************************************************/
 function _makeThumbs($_ap, $source, $max_width) { //, $max_height) {
 	// Funktion von IT-Runde.de
-	global $targetPath;
-	$target = $targetPath . $_ap . $source;
+	global $storeFolder;
+	$target = $storeFolder . $_ap . $source;
 
 	if (file_exists($target)) {
       //echo $fileName . " already exists. ";
 	  unlink($target);
     }
 
-	$image = $targetPath . $source;
+	$image = $storeFolder . $source;
 	$picsize     = getimagesize($image);
 	if(($picsize[2]==1)OR($picsize[2]==2)OR($picsize[2]==3)) {
 	if($picsize[2] == 1) {

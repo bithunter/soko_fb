@@ -2731,6 +2731,7 @@ var Dropzone = function (_Emitter) {
 
 ****************************************************************/
 
+		  console.log("Response: "+response);
 		  var adata = JSON.parse(response);
      		if (adata.success)
 			{

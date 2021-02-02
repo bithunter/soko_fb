@@ -1,6 +1,6 @@
 /*
 Error: Undefined variable: "$zindex-zoom".
-        on line 9 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/zoom.scss
+        on line 9 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/zoom.scss
 
 4:   cursor: -moz-zoom-in;
 5: }
@@ -15,7 +15,7 @@ Error: Undefined variable: "$zindex-zoom".
 14:   cursor: -webkit-zoom-out;
 
 Backtrace:
-/Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/zoom.scss:9
+/Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/zoom.scss:9
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -61,4 +61,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$zindex-zoom\".\A         on line 9 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/zoom.scss\A \A 4:   cursor: -moz-zoom-in;\A 5: }\A 6: .zoom-img,\A 7: .zoom-img-wrap {\A 8:   position: relative;\A 9:   z-index: $zindex-zoom;\A 10:   transition: all 300ms;\A 11: }\A 12: img.zoom-img {\A 13:   cursor: pointer;\A 14:   cursor: -webkit-zoom-out;"; }
+  content: "Error: Undefined variable: \"$zindex-zoom\".\A         on line 9 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/zoom.scss\A \A 4:   cursor: -moz-zoom-in;\A 5: }\A 6: .zoom-img,\A 7: .zoom-img-wrap {\A 8:   position: relative;\A 9:   z-index: $zindex-zoom;\A 10:   transition: all 300ms;\A 11: }\A 12: img.zoom-img {\A 13:   cursor: pointer;\A 14:   cursor: -webkit-zoom-out;"; }

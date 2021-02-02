@@ -1,6 +1,6 @@
 /*
 Error: Undefined variable: "$btn-text-transform".
-        on line 5 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/buttons-custom.scss
+        on line 5 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/buttons-custom.scss
 
 1: //
 2: // Custom button styles
@@ -14,7 +14,7 @@ Error: Undefined variable: "$btn-text-transform".
 10: }
 
 Backtrace:
-/Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/buttons-custom.scss:5
+/Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/buttons-custom.scss:5
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -60,4 +60,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$btn-text-transform\".\A         on line 5 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/buttons-custom.scss\A \A 1: //\A 2: // Custom button styles\A 3: //\A 4: .btn {\A 5:   text-transform: $btn-text-transform;\A 6:   letter-spacing: $btn-letter-spacing;\A 7: }\A 8: .btn-borderless {\A 9:   border: 0;\A 10: }"; }
+  content: "Error: Undefined variable: \"$btn-text-transform\".\A         on line 5 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/buttons-custom.scss\A \A 1: //\A 2: // Custom button styles\A 3: //\A 4: .btn {\A 5:   text-transform: $btn-text-transform;\A 6:   letter-spacing: $btn-letter-spacing;\A 7: }\A 8: .btn-borderless {\A 9:   border: 0;\A 10: }"; }

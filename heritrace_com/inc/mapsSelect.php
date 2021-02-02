@@ -18,10 +18,10 @@
             case 1:                 // openStreetMap
                 echo '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-   crossorigin="">
+   crossorigin=""><link rel="stylesheet" type="text/css" href="../../js/cluster/MarkerCluster.css" /><link rel="stylesheet" type="text/css" href="../../js/cluster/MarkerCluster.Default.css" />
  <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
    integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
-   crossorigin=""></script>';
+   crossorigin=""></script><script src="../../js/cluster/leaflet.markercluster-src.js"></script>';
                 break;
 
             case 2:                 // googleMaps

@@ -1,7 +1,7 @@
 /*
 Error: Undefined variable: "$enable-print-styles".
-        on line 11 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/bootstrap/_print.scss
-        from line 5 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/components.scss
+        on line 11 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/bootstrap/_print.scss
+        from line 5 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/components.scss
 
 6: 
 7: // Core CSS
@@ -16,8 +16,8 @@ Error: Undefined variable: "$enable-print-styles".
 16: @import "./bootstrap/_buttons.scss";
 
 Backtrace:
-/Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/bootstrap/_print.scss:11
-/Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/components.scss:5
+/Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/bootstrap/_print.scss:11
+/Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/components.scss:5
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:300:in `visit_if'
@@ -65,4 +65,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$enable-print-styles\".\A         on line 11 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/bootstrap/_print.scss\A         from line 5 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/components.scss\A \A 6: \A 7: // Core CSS\A 8: @import \"./bootstrap/_root.scss\";\A 9: @import \"./bootstrap/_reboot.scss\";\A 10: @import \"./bootstrap/_type.scss\";\A 11: @import \"./bootstrap/_images.scss\";\A 12: @import \"./bootstrap/_code.scss\";\A 13: @import \"./bootstrap/_grid.scss\";\A 14: @import \"./bootstrap/_tables.scss\";\A 15: @import \"./bootstrap/_forms.scss\";\A 16: @import \"./bootstrap/_buttons.scss\";"; }
+  content: "Error: Undefined variable: \"$enable-print-styles\".\A         on line 11 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/bootstrap/_print.scss\A         from line 5 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/components.scss\A \A 6: \A 7: // Core CSS\A 8: @import \"./bootstrap/_root.scss\";\A 9: @import \"./bootstrap/_reboot.scss\";\A 10: @import \"./bootstrap/_type.scss\";\A 11: @import \"./bootstrap/_images.scss\";\A 12: @import \"./bootstrap/_code.scss\";\A 13: @import \"./bootstrap/_grid.scss\";\A 14: @import \"./bootstrap/_tables.scss\";\A 15: @import \"./bootstrap/_forms.scss\";\A 16: @import \"./bootstrap/_buttons.scss\";"; }

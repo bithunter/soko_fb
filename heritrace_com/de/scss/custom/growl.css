@@ -1,6 +1,6 @@
 /*
 Error: Undefined variable: "$zindex-growl".
-        on line 10 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/growl.scss
+        on line 10 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/growl.scss
 
 5: .growl {
 6:   position: fixed;
@@ -15,7 +15,7 @@ Error: Undefined variable: "$zindex-growl".
 15:     right: auto;
 
 Backtrace:
-/Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/growl.scss:10
+/Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/growl.scss:10
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -61,4 +61,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$zindex-growl\".\A         on line 10 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/growl.scss\A \A 5: .growl {\A 6:   position: fixed;\A 7:   top: 65px;\A 8:   left: 15px;\A 9:   right: 15px;\A 10:   z-index: $zindex-growl;\A 11: \A 12:   &.growl-static {\A 13:     position: relative;\A 14:     top: auto;\A 15:     right: auto;"; }
+  content: "Error: Undefined variable: \"$zindex-growl\".\A         on line 10 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/growl.scss\A \A 5: .growl {\A 6:   position: fixed;\A 7:   top: 65px;\A 8:   left: 15px;\A 9:   right: 15px;\A 10:   z-index: $zindex-growl;\A 11: \A 12:   &.growl-static {\A 13:     position: relative;\A 14:     top: auto;\A 15:     right: auto;"; }

@@ -1,6 +1,6 @@
 /*
 Error: Undefined variable: "$gray-200".
-        on line 27 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/cards-profile.scss
+        on line 27 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/cards-profile.scss
 
 22:   padding: 0;
 23: }
@@ -14,7 +14,7 @@ Error: Undefined variable: "$gray-200".
 31: }
 
 Backtrace:
-/Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/cards-profile.scss:27
+/Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/cards-profile.scss:27
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/list_literal.rb:75:in `block in _perform'
@@ -64,4 +64,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$gray-200\".\A         on line 27 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/cards-profile.scss\A \A 22:   padding: 0;\A 23: }\A 24: .card-menu-item {\A 25:   display: inline-block;\A 26:   padding: 0 10px;\A 27:   border-right: 1px solid $gray-200;\A 28: }\A 29: .card-menu-item:last-child {\A 30:   border-right: 0;\A 31: }"; }
+  content: "Error: Undefined variable: \"$gray-200\".\A         on line 27 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/cards-profile.scss\A \A 22:   padding: 0;\A 23: }\A 24: .card-menu-item {\A 25:   display: inline-block;\A 26:   padding: 0 10px;\A 27:   border-right: 1px solid $gray-200;\A 28: }\A 29: .card-menu-item:last-child {\A 30:   border-right: 0;\A 31: }"; }

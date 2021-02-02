@@ -1,6 +1,6 @@
 /*
 Error: Undefined variable: "$text-muted".
-        on line 31 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/media-list-stream.scss
+        on line 31 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/media-list-stream.scss
 
 26:   }
 27:   .media-object {
@@ -15,7 +15,7 @@ Error: Undefined variable: "$text-muted".
 36:   }
 
 Backtrace:
-/Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/media-list-stream.scss:31
+/Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/media-list-stream.scss:31
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -72,4 +72,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$text-muted\".\A         on line 31 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/media-list-stream.scss\A \A 26:   }\A 27:   .media-object {\A 28:     border-radius: 100%;\A 29:   }\A 30:   .media .text-muted a {\A 31:     color: $text-muted;\A 32:     font-weight: 700;\A 33:   }\A 34:   .media-body-actions {\A 35:     margin-top: 5px;\A 36:   }"; }
+  content: "Error: Undefined variable: \"$text-muted\".\A         on line 31 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/media-list-stream.scss\A \A 26:   }\A 27:   .media-object {\A 28:     border-radius: 100%;\A 29:   }\A 30:   .media .text-muted a {\A 31:     color: $text-muted;\A 32:     font-weight: 700;\A 33:   }\A 34:   .media-body-actions {\A 35:     margin-top: 5px;\A 36:   }"; }

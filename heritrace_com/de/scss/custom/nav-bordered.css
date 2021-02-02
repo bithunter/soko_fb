@@ -1,6 +1,6 @@
 /*
 Error: Undefined variable: "$spacer-y".
-        on line 12 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/nav-bordered.scss
+        on line 12 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/nav-bordered.scss
 
 7:     float: left;
 8: 
@@ -15,7 +15,7 @@ Error: Undefined variable: "$spacer-y".
 17:       &:hover,
 
 Backtrace:
-/Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/nav-bordered.scss:12
+/Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/nav-bordered.scss:12
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/operation.rb:67:in `_perform'
@@ -89,4 +89,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$spacer-y\".\A         on line 12 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/nav-bordered.scss\A \A 7:     float: left;\A 8: \A 9:     // Links rendered as pills\A 10:     > .nav-link {\A 11:       display: inline-block;\A 12:       padding: ($spacer-y / 2) 0;\A 13:       font-weight: $nav-bordered-font-weight;\A 14:       color: $nav-bordered-color;\A 15:       border-bottom: 4px solid transparent;\A 16: \A 17:       &:hover,"; }
+  content: "Error: Undefined variable: \"$spacer-y\".\A         on line 12 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/nav-bordered.scss\A \A 7:     float: left;\A 8: \A 9:     // Links rendered as pills\A 10:     > .nav-link {\A 11:       display: inline-block;\A 12:       padding: ($spacer-y / 2) 0;\A 13:       font-weight: $nav-bordered-font-weight;\A 14:       color: $nav-bordered-color;\A 15:       border-bottom: 4px solid transparent;\A 16: \A 17:       &:hover,"; }

@@ -2,7 +2,8 @@
 if (!isset($_SESSION)) {
 	session_start();
 }
-include "../../Connections/heritrace.php";
+include "../inc/htr_config.php";
+$path = "../22062014/";
 
 if(isset($_POST['table'])) 
 {
@@ -10,9 +11,11 @@ if(isset($_POST['table']))
 	$mysqli=openDataBase(); 
 	if($mysqli->query("delete from ".$_POST['table'].".posts where posts.postID =".$_POST['postID']))
 	{
-		$targetFile = ".." . $ds. $storeFolder . $ds . $_POST['nameNew'];
-		if (file_exists($targetFile)) {
-		  unlink($targetFile);
+		$targetFile = $_POST['nameNew'];
+		if (file_exists($path.$targetFile)) {
+		  unlink($path.$targetFile);
+		  unlink($path.'small_'.$targetFile);
+		  unlink($path.'info_'.$targetFile);
     	}
     	$data = array( 
         	'success' => true, 

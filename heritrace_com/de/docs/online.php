@@ -16,25 +16,36 @@ include("../../inc/mapsSelect.php");
     <meta name="keywords" content="">
     <meta name="author" content="">
 
+	  
     <title>
       
-        heritrace &middot; 
+        .BK 5.2.3 &middot; 
       
     </title>
-
+	<script src="assets/js/autocomplete.js"></script>
+    
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
     <link href="assets/css/toolkit.css" rel="stylesheet">
     
     <link href="assets/css/application.css" rel="stylesheet">
+	<script src="assets/js/jquery-3.3.1.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="drop/dropzone.css" />
 	<link href="../../img/favicon.ico" rel="icon" type="image/x-icon" />
+	<link href="memopicker/foundation-datepicker.min.css" rel="stylesheet">
+	<script src="memopicker/foundation-datepicker.min.js"></script>
+	<script src="memopicker/foundation-datepicker.de.js"></script>
 
     <script src="drop/dropzone.js"></script>
+	<link type="text/css" rel="stylesheet" href="../../js/magiczoomplus_t/magiczoomplus-trial/magiczoomplus/magiczoomplus.css"/>
+	<script type="text/javascript" src="../../js/magiczoomplus_t/magiczoomplus-trial/magiczoomplus/magiczoomplus.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../js/magicslideshow/magicslideshow.css" media="screen"/>
+    <script src="../../js/magicslideshow/magicslideshow.js" type="text/javascript"></script>
 	<script src="../../js/script_index Kopie.js"></script>
 
 	 <?php $h->initMap(MAP_TYPE);  // gewählten Kartentyp initialisieren ?>
 
     <style>
+		/*.ui-datepicker{z-index: 9999 !important}
       /* note: this is a hack for ios iframe for bootstrap themes shopify page */
       /* this chunk of css is not part of the toolkit :)    */
       body {
@@ -43,7 +54,121 @@ include("../../inc/mapsSelect.php");
         *width: 100%;
       }
     </style>
+<script>
 
+$(function(){
+  var nowTemp = new Date();
+  var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), nowTemp.getHours(), nowTemp.getMinutes(), 0, 0);
+  var d = new Date(); d.setFullYear(1826,0,1);
+  var sd = new Date(d.getFullYear(),0,1,0,0,0,0);
+  $('#mdpt').fdatepicker({
+		format: 'dd-mm-yyyy hh:ii',
+		disableDblClickSelection: true,
+		language: 'de',
+		pickTime: true,
+        leftArrow:'<<',
+		rightArrow:'>>',
+		closeButton: true,
+        closeIcon: '<div id="pop_close" style="background:url(img/closebutton-blue.png) no-repeat top center;width:24px;height:24px;cursor:pointer;opacity:1;"></div>',
+        initialDate: now,
+	  	startDate: sd
+	});
+});
+
+	var MagicSlideshowOptions = {
+                'width': '480px',
+                'height': '300px',
+                'selectors': 'right',
+				'selectors-style': 'thumbnails',
+				'arrows': false,
+				'autoplay': true,
+				'kenburns': false
+            };
+
+
+	var mzOptions = {
+    variableZoom: true
+};
+
+var PageProperties = {
+			DOMLoaded: false,
+			version: {'detected':null, 'preferred':null},
+			jsVersion: '?v=001',
+			date: {
+			local: new Date(),
+			update: new Date(1409071301000)
+			},
+			isFixed: false,
+			sp3Top: 0,				// Position der rechten Spalte
+			sp3Left: 0,
+			sp3Width: 0,
+			showForum: true,
+			authenticationRequired:false,
+			userID: 0,
+			facebookID: 0,
+			ajaxrequest: 0,
+			postID: 0,
+			firstID: null,		// ID des ersten dargestellten Posts
+			lastID: null	,	// ID des letzten dargestellten (geladenen) Posts; nächstes Post muss ID < lastID haben
+			activeScroll: false,
+			onewsScroll: null,
+			picLoaded: [],
+			picLoadedIndex: 0,
+			map: null,
+			bounds: null,
+			marker: [],			// Marker für die Positionsangaben auf der großen Karte
+			markerClusterer: null,		// Infofeld für den Marker, zeigt eine Miniaturausgabe des Bildes
+			coord: "48.20876112032762, 16.37261580746849",
+			searchBox: null,
+			gmL: [],						// googlemaps-eventhandler
+			homeControlDiv: null,		// home-button in karte
+			controlUI: null
+			};
+
+/****************************************************************
+
+ID des aktuellsten Eintrags holen (letzter Eintrag hat höchste ID)
+Voreingestellte Anzahl von Postings beim Start laden (lim = Anzahl)
+
+
+****************************************************************/
+			$.post("../../script/max_postID_sql.php",	// ajax-request
+ 	 		{table: 'posts', field: 'postID'},
+			function(p, status) {
+				var adata = jQuery.parseJSON(p);
+				console.log("Höchste Post-ID: "+adata.maxID);
+    	  		PageProperties.firstID = adata.maxID;
+				PageProperties.lastID = adata.maxID;
+				PageProperties.lastID++;
+
+				var sql = "SELECT postID, profileID, dateMake, type, pictureName, pictureOrgName, latitude, longitude, description FROM posts WHERE postID <"+PageProperties.lastID+" ORDER BY postID DESC";
+
+				$.post("../../script/loadpost.php",
+ 	 			{lim: 4, sql: sql, output: 'browser' },
+				function(html, status) {
+    	  						if (html != "") 
+    	  						{
+									/*
+										json-Informationen aus dem Rückgabewert holen:
+										
+										{ json-werte }<div der geladenen postings...>
+									*/
+									var adata = jQuery.parseJSON(html.slice(0, html.search('}')+1));
+    	  							if (adata.success)  
+    	  							{
+									  //$('#newsfeed').after(html.slice(html.search('}')+1));
+									  $( "#newsfeed" ).append(html.slice(html.search('}')+1));
+									  MagicZoom.refresh();
+									  PageProperties.lastID = adata.lastID;		// ID des letzten geladenen Post (letzter in der Post-Liste)
+									  PageProperties.onewsScroll = new newsScroll();	// scrolling der rechten Leiste
+										console.log("ID letzter Post: "+PageProperties.lastID);
+									} else {
+										console.log("Anzahl der Posts konnte nicht festgestellt werden!");
+									}
+								}				
+    	  		});
+		});
+</script>
   </head>
 
 
@@ -53,7 +178,7 @@ include("../../inc/mapsSelect.php");
 
 <div class="growl" id="app-growl"></div>
 
-<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-primary app-navbar">
+<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-primary app-navbar" id="onHeader">
 
   <a class="navbar-brand" href="index.html">
     <img src="assets/img/brand-white_he.png" alt="brand">
@@ -82,7 +207,7 @@ include("../../inc/mapsSelect.php");
         <a class="nav-link" data-toggle="modal" href="#msgModal">Messages</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="docs/index.html">Docs</a>
+        <a class="nav-link" href="docs/index.html">Weltkarte</a>
       </li>
 
       <li class="nav-item d-md-none">
@@ -120,7 +245,11 @@ include("../../inc/mapsSelect.php");
     </ul>
   </div>
 </nav>
+<!--
 
+		Liste der Nachrichten, die bei Anklicken eingeblendet werden
+
+-->
 <div class="modal fade" id="msgModal" tabindex="-1" role="dialog" aria-labelledby="msgModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -193,7 +322,7 @@ include("../../inc/mapsSelect.php");
                 <div class="media-body">
                   <strong>Dave Gamache</strong>
                   <div class="media-body-secondary">
-                    Brunch sustainable placeat vegan bicycle rights yeah…
+                    Ich weiß nicht worum es geht, bin aber immer noch dagegen!
                   </div>
                 </div>
               </div>
@@ -401,7 +530,7 @@ include("../../inc/mapsSelect.php");
 
 <div class="container pt-4 pb-5">
   <div class="row">
-    <div class="col-lg-3">
+    <div id="board" class="col-lg-3">
       <div class="card card-profile mb-4">
         <div class="card-header" style="background-image: url(assets/img/iceland.jpg);"></div>
         <div class="card-body text-center">
@@ -415,7 +544,7 @@ include("../../inc/mapsSelect.php");
             <a class="text-inherit" href="profile/index.html"><?php echo $_SESSION['profileName']; ?></a>
           </h6>
 
-          <p class="mb-4">Ready I am alway</p>
+          <p class="mb-4">CEO of Chaos 2021</p>
 
           <ul class="card-menu">
             <li class="card-menu-item">
@@ -431,6 +560,15 @@ include("../../inc/mapsSelect.php");
                 <h6 class="my-0">1</h6>
               </a>
             </li>
+          </ul>
+        </div>
+      </div>
+
+	  <div class="card d-md-block d-lg-block mb-4">
+        <div class="card-body">
+          <h6 class="mb-3">Interaktiv <small>· <a href="#">Edit</a></small></h6>
+          <ul class="list-unstyled list-spaced">
+            <li><span class="text-muted icon icon-globe mr-3"></span>Weltkarte <a href="javascript: displayMap();">erforschen</a>
           </ul>
         </div>
       </div>
@@ -485,8 +623,7 @@ include("../../inc/mapsSelect.php");
 **    News-Stream - Mittlere Hauptspalte
 **
 ********************************************-->
-    <div class="col-lg-6">
-		<div id="newscol">
+		<div id="newscol" class="col-lg-6">
 
       <ul class="list-group media-list media-list-stream mb-4">
 
@@ -520,13 +657,30 @@ Falls eines dieser Bilder das gleiche Objekt wie das Ihre zeigt, dann klicken Si
 	<div class="row justify-content-between"><div class="col-6" id="pic_description"></div><div class="col-6" id="post-controls"></div></div>
 	</div>
 	<div class="row"><div class="pdate" id="pic_date">Aufnahmedatum: 
-	  <input type="text" id="Datepicker1" value="">
+	  <input class="mdpt" type="text" value="" id="mdpt" name="mdpt">
 		</div></div>
     <div class="row">
     <div id="showSlide"></div>
 	</div>
 	<div class="row">
-		<input id="pacInput" type="text" placeholder="Ort suchen"> <!-- https://nominatim.openstreetmap.org/search/Hauptstr%20129%207051?format=json&addressdetails=1&limit=1&polygon_svg=1 -->
+		<!--input id="pacInput" type="text" placeholder="Ort suchen"> <!-- https://nominatim.openstreetmap.org/search/Hauptstr%20129%207051?format=json&addressdetails=1&limit=1&polygon_svg=1 -->
+		<input autocomplete="off" id="search" type="text"/>
+    <script>
+      var autocomplete = new kt.OsmNamesAutocomplete(
+          'search', 'https://geocoder.tilehosting.com/', 'azg0OT5zA96eEmbRB9Uv');
+      autocomplete.registerCallback(function(item) {
+        //console.log(JSON.stringify(item, ' ', 2));
+		  var myObj = JSON.parse(JSON.stringify(item, ' ', 2));
+        //alert(myObj.boundingbox[3]);
+
+		  //console.log(myObj.boundingbox[1]+", "+myObj.boundingbox[0]);
+		  uploadProperties.map.setView([(myObj.boundingbox[1]), (myObj.boundingbox[0])]);
+		  uploadProperties.mapMarker.setLatLng([(myObj.boundingbox[1]), (myObj.boundingbox[0])]);
+		  $("#latbox").val(myObj.boundingbox[1]);
+    	  $("#lngbox").val(myObj.boundingbox[0]);
+
+      });
+    </script>
 	</div>
 	<div class="row">
 		<div class="container"><div class="row"><div id="mapcontainer" style="width: 100%; height: 240px;"></div></div></div>
@@ -568,7 +722,8 @@ Dropzone.options.fileUpload = {
 	  dictDefaultMessage: "Bild/Foto hierher ziehen",
 	  dictHoverMessage: "Bild/Foto hier ablegen",
   
-  	maxFilesize: 5, // MB
+  	maxFilesize: 10, // MB
+	parallelUploads: 1,
   	uploadMultiple: false,
  	accept: function(file, done) {
 		if (file.name == "justinbieber0.jpg") {
@@ -585,10 +740,13 @@ Dropzone.options.fileUpload = {
 		  this.on("complete", function(files) {	// Upload abgeschlossen
 			   if(!uploadProperties.latitude) uploadProperties.latitude='48.208708';
 			   if(!uploadProperties.longitude) uploadProperties.longitude='16.372303';
-			  var picdate = uploadProperties.day+"."+uploadProperties.month+"."+uploadProperties.year+", "+uploadProperties.hour+":"+uploadProperties.minute+":"+uploadProperties.second+" Uhr";
-			  $("#Datepicker1").val(picdate);
-			  if(!uploadProperties.day) picdate = '<?php echo date("d.m.Y").", ".date("h:i:s");?>';
-			  console.log(picdate);
+			  if(uploadProperties.day){	// Aufnahmezeit im Bild gespeichert
+				  var picdate = uploadProperties.day+"-"+uploadProperties.month+"-"+uploadProperties.year+" "+uploadProperties.hour+":"+uploadProperties.minute;
+			  } else {
+				var nowTemp = new Date();
+  				var picdate = nowTemp.getDate()+'-'+nowTemp.getMonth()+'-'+nowTemp.getFullYear()+' '+nowTemp.getHours()+':'+nowTemp.getMinutes();
+			  }
+			  $('#mdpt').val(picdate);
 			  /*console.log("-Lat: "+uploadProperties.latitude);
 			  console.log("-PicID: "+uploadProperties.picID);
 			  console.log("-Year: "+uploadProperties.year);
@@ -598,8 +756,9 @@ Dropzone.options.fileUpload = {
 	
 	//	notwendige Informationen zum hochgeladenen Bild holen
 	//  GPS - Infos und Abbruch/Speicher-Button darstellen
+	//  Zusatz für textarea: onKeyUp="javascript: console.log($(\'#picDescr\').val().length
 	
-			$('#pic_description').html('<textarea id="picDescr" class="cdtxt" placeholder="Bildbeschreibung eingeben..." rows="4" onKeyUp="javascript: console.log($(\'#picDescr\').val().length);"></textarea>');
+			$('#pic_description').html('<textarea id="picDescr" class="cdtxt" placeholder="Bildbeschreibung..." rows="4" );"></textarea>');
 	
 			$('#post-controls').html('<input type="text" class="input input--sm" id="latbox" value="'+uploadProperties.latitude+'" readonly><input type="text" class="input input--sm" id="lngbox" value="'+uploadProperties.longitude+'" readonly><div class="cdsupl" id="cntrBtn"><div style="float:left" id="rb"><a onClick="" class="btn btn--sm btn--white hp-sign__btn"><span class="btn-txt">Abbrechen</span></a></div><div style="float:right" id="sb"><a onClick="" class="btn btn--sm btn--white hp-sign__btn"><span class="btn-txt">Speichern</span></a></div></div>');
 	
@@ -622,7 +781,7 @@ Dropzone.options.fileUpload = {
 			  for (i=0;i<uploadProperties.gmL.length;i++) google.maps.event.removeListener(uploadProperties.gmL[i]);
 			  uploadProperties.gmL = [];
 			  //deleteMarker();
-	
+				//console.log("Neuer Name (zu löschen): "+uploadProperties.nameNew);
 			  delete_posting("heritrace", uploadProperties.picID, uploadProperties.nameNew);
 			  $('#fileUpload').animate({height: 75}, 1500);
 			  $('#position').slideUp("fast","swing");
@@ -639,7 +798,8 @@ Dropzone.options.fileUpload = {
 			  // Make sure the button click doesn't submit the form:
 			  event.preventDefault();
 			  event.stopPropagation();
-			  update_posting(uploadProperties.picID, $.trim($("#latbox").val()), $.trim($("#lngbox").val()), $.trim($("#Datepicker1").val()+" 12:00:00"), $("#picDescr").val(), '1');
+				  //console.log($("textarea#picDescr").val());
+			  update_posting(uploadProperties.picID, $.trim($("#latbox").val()), $.trim($("#lngbox").val()), $.trim($("#Datepicker1").val()+" 12:00:00"), $("textarea#picDescr").val(), '1');
 			  // remove the File from display
 			  _this.removeFile(uploadProperties.file);
 			  //$("rb").removeEventListener("click");
@@ -651,6 +811,34 @@ Dropzone.options.fileUpload = {
 			  $('#position').slideUp("fast","swing");
 			  //setTimeout(_hideSlide(), 2000);		// Slideshow (falls vorhanden) löschen
 			  //PageProperties.onewsScroll.loadPost(uploadProperties.picID, "=", true); // neuen Post an oberste Position
+			  var sql = "SELECT postID, profileID, dateMake, type, pictureName, pictureOrgName, latitude, longitude, description FROM posts WHERE postID = "+uploadProperties.picID+" ORDER BY postID DESC LIMIT 1";
+			  $.post("../../script/loadpost.php",
+ 	 			{lim: 1, sql: sql, output: 'browser' },
+				function(html, status) {
+    	  						if (html != "") 
+    	  						{
+									/*
+										json-Informationen aus dem Rückgabewert holen:
+										
+										{ json-werte }<div der geladenen postings...>
+									*/
+									var adata = jQuery.parseJSON(html.slice(0, html.search('}')+1));
+    	  							if (adata.success)  
+    	  							{
+										// 2 Zeilen für die Testphase:
+										$( "#post10" ).remove();
+										$( "#post9" ).before(html.slice(html.search('}')+1));
+
+									  //$( "#post"+PageProperties.firstID ).before(html.slice(html.search('}')+1));
+									  MagicZoom.refresh();
+									  PageProperties.firstID = adata.lastID;	// ID des ersten Post in der Liste
+									} else {
+										console.log("Anzahl der Posts konnte nicht festgestellt werden!");
+									}
+								} else {
+										console.log("Post konnte nicht gespeichert werden");
+									}				
+    	  		});
 	 });
 	
 	/****************************************************************
@@ -662,8 +850,8 @@ Dropzone.options.fileUpload = {
 	zentriert
 	
 	****************************************************************/
-			  console.log("Map: "+uploadProperties.map);
-			  console.log(uploadProperties.latitude+" - "+uploadProperties.longitude);
+			  //console.log("Map: "+uploadProperties.map);
+			  //console.log(uploadProperties.latitude+" - "+uploadProperties.longitude);
 	var type=<?php echo MAP_TYPE;?>;
 	switch (type) {
 			case 1:
@@ -686,6 +874,8 @@ Dropzone.options.fileUpload = {
 			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 		id: 'mapbox.streets'
 	}).addTo(mymap);
+
+
 	marker = L.marker([uploadProperties.latitude,uploadProperties.longitude], {draggable: 'true'}).addTo(mymap);
 	uploadProperties.mapMarker=marker;
 	popup = L.popup();
@@ -946,9 +1136,96 @@ Falls ja, wird Slideshow mit den gefunden Informationen angezeigt
 }*/
 </script>
 		  </li>
+<!--
+       Neue Ransomware-Daten laden
+
+-->
+		  
+<!--****************************************************************
+
+newsfeed
+
+Darstellung von Bildern, Karten, Kommentaren und
+Bewertungen der User
+
+Bilder können angesehen, kommentiert, bewertet und verglichen
+werden
+
+****************************************************************-->
+
+        <div id="newsfeed"></div>
+        <?php //include "../script/loadpost.php"; ?>
+        <div id="infiniteSpinner" class="cardtop">
+  		  <!--div class="talk-load-more"><button class="Button__button___2b6e    Button__type--local___1PIMj   talk-load-more-button">Weitere Kommentare anzeigen</button></div-->
+		</div>
+		  <div id="eof"><img src="../../img/loadPost.gif" width="100%" height="240px"></div>
+        <div class="cardbottom"></div>
 
 
-		  <li class="media list-group-item p-4 mb-2">
+		  
+		<li class="media list-group-item p-4 mb-2" style="align-items: stretch">
+          <div style="display:list-item; width: 100%; height: 20px">
+			  <p><strong>Az IKDA </strong></p>
+          </div>
+		<div style="display:list-item; width: 100%; height: 20px">
+            <input type="text" class="form-control" placeholder="3676743">
+          </div>
+        </li>
+		  
+
+		<li class="media list-group-item p-4 mb-2">
+	
+	
+		<div style="width: 640px">
+          <img
+            class="media-object d-flex align-self-start mr-3"
+            src="assets/img/avatar-mdo.png">
+          <div class="media-body">
+            <div class="media-heading">
+              <small class="float-right text-muted">Tatzeit 25.01.2021</small>
+              <h6>Dr. Rsumofsky GesmbH & Co Kg</h6>
+            </div>
+
+            <p>
+              Der erste Zug für die U1 - fix.
+            </p>
+		  </div>
+		</div>
+		  <div class="media-body-inline-grid mb-0" style="width: 640">
+            <ul class="media-list">
+              <li class="media mb-3">
+                <img
+                  class="media-object d-flex align-self-start mr-3"
+                  src="assets/img/avatar-dhg.png">
+                <div class="media-body">
+                  <strong>Dave Gamache: </strong>
+                  Ich weiß nicht worum es geht, bin aber dagegen!
+                </div>
+              </li>
+			  <li class="media mb-3">
+                <img
+                  class="media-object d-flex align-self-start mr-3"
+                  src="assets/img/avatar-fat.jpg">
+                <div class="media-body">
+                  <strong>Jacon Thornton: </strong>
+                  Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.
+                </div>
+              </li>
+              <li class="media">
+                <img
+                  class="media-object d-flex align-self-start mr-3"
+                  src="assets/img/avatar-mdo.png">
+                <div class="media-body">
+                  <strong>Mark Otto: </strong>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+
+		<li class="media list-group-item p-4 mb-2">
           <img
             class="media-object d-flex align-self-start mr-3"
             src="assets/img/avatar-mdo.png">
@@ -959,7 +1236,7 @@ Falls ja, wird Slideshow mit den gefunden Informationen angezeigt
             </div>
 
             <p>
-              Der erste Zug für die U1.
+              Der erste Zug für die U1 - fix noch einmal.
             </p>
 
             <div class="media-body-inline-grid mb-0" data-grid="images">
@@ -1002,8 +1279,6 @@ Falls ja, wird Slideshow mit den gefunden Informationen angezeigt
             </ul>
           </div>
         </li>
-
-
         <li class="media list-group-item p-4 mb-2">
           <img
             class="media-object d-flex align-self-start mr-3"
@@ -1179,9 +1454,13 @@ Falls ja, wird Slideshow mit den gefunden Informationen angezeigt
             </ul>
           </div>
         </li>
-      </ul>
+		</ul>
 		</div>
-    </div>
+<!----------------------------------------------------
+   Rechte Spalte für News, Werbung...
+
+----------------------------------------------------->
+
     <div id="comment" class="col-lg-3">
 		<div id="weiterLesen">
 			<div id="weiterLesenScroll">
@@ -1191,6 +1470,53 @@ Falls ja, wird Slideshow mit den gefunden Informationen angezeigt
       </div>
 
       <div class="card mb-4 d-none d-lg-block">
+        <div class="card-body">
+          <h6 class="mb-3">Sponsored</h6>
+          <div data-grid="images" data-target-height="150">
+            <img class="media-object" data-width="640" data-height="640" data-action="zoom" src="assets/img/instagram_2.jpg">
+          </div>
+          <p><strong>It might be time to visit Iceland.</strong> Iceland is so chill, and everything looks cool here. Also, we heard the people are pretty nice. What are you waiting for?</p>
+          <button class="btn btn-outline-primary btn-sm">Buy a ticket</button>
+        </div>
+      </div>
+
+      <div class="card mb-4 d-none d-lg-block">
+        <div class="card-body">
+        <h6 class="mb-3">Likes <small>· <a href="#">View All</a></small></h6>
+        <ul class="media-list media-list-stream">
+          <li class="media mb-2">
+            <img
+              class="media-object d-flex align-self-start mr-3"
+              src="assets/img/avatar-fat.jpg">
+            <div class="media-body">
+              <strong>Jacob Thornton</strong> @fat
+              <div class="media-body-actions">
+                <button class="btn btn-outline-primary btn-sm">
+                  <span class="icon icon-add-user"></span> Follow</button>
+              </div>
+            </div>
+          </li>
+           <li class="media">
+            <a class="media-left" href="#">
+              <img
+                class="media-object d-flex align-self-start mr-3"
+                src="assets/img/avatar-mdo.png">
+            </a>
+            <div class="media-body">
+              <strong>Mark Otto</strong> @mdo
+              <div class="media-body-actions">
+                <button class="btn btn-outline-primary btn-sm">
+                  <span class="icon icon-add-user"></span> Follow</button></button>
+              </div>
+            </div>
+          </li>
+        </ul>
+        </div>
+        <div class="card-footer">
+          Dave really likes these nerds, no one knows why though.
+        </div>
+      </div>
+	<div class="card mb-4 d-none d-lg-block">
         <div class="card-body">
           <h6 class="mb-3">Sponsored</h6>
           <div data-grid="images" data-target-height="150">
@@ -1257,13 +1583,18 @@ Falls ja, wird Slideshow mit den gefunden Informationen angezeigt
         </div>
       </div>
 	  		</div>
-		</div>
+	</div><div id="endcomment"></div>
     </div>
   </div>
 </div>
+<div id="bouncepopup" style="background-color:rgba(0,0,0,0.7);top:0;left:0;bottom:0;right:0;position:fixed;z-index:10; display:none">
+<div id="popup_container" style="padding:0;position:relative;background-color:white;margin:70px auto 0 auto;width:1450px;height:850px;z-index:0;border-radius: .8rem;"><div id="pop_close" style="position:absolute;right:-7px;top:-7px;z-index:1005;background:url(img/closebutton-blue.png) no-repeat top center;width:24px;height:24px;cursor:pointer;opacity:1;" onClick="javascript: hideMap();">
+</div>
+<div id="popup_map" style="width:100%; height:100%; border-color: #010101; border-style: solid; border-radius: .8rem;">
+</div>
+</div></div>
 
-
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
+	<!--script src="assets/js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script-->
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/chart.js"></script>
     <script src="assets/js/toolkit.js"></script>
@@ -1271,9 +1602,21 @@ Falls ja, wird Slideshow mit den gefunden Informationen angezeigt
     <script>
       // execute/clear BS loaders for docs
       $(function(){while(window.BS&&window.BS.loader&&window.BS.loader.length){(window.BS.loader.pop())()}})
-    </script>
-<?php if (MAP_TYPE===2) echo '<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfCDbptvrgd56EmthAWko3xI_btbu3JBc&libraries=places">
-    </script>'; ?>
+
+	/*$(function() {
+	$( "#Datepicker1" ).datepicker({
+	  showButtonPanel: true,
+	  yearRange: "1826:" + (new Date().getFullYear()),
+	  dateFormat: "yy-mm-dd",
+	  changeMonth: true,
+      changeYear: true,
+	  stepMonths: 12,
+	  gotoCurrent: true
+    });
+});*/
+<?php if (MAP_TYPE===2) echo 'async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfCDbptvrgd56EmthAWko3xI_btbu3JBc&libraries=places">'; ?>
+
+</script>
   </body>
 </html>

@@ -8,6 +8,7 @@ Element.addMethods({
   }
 });
 */
+
 	var markerClusterer = null;
     var map = null;
     var imageUrl = 'http://chart.apis.google.com/chart?cht=mm&chs=24x32&' +
@@ -34,6 +35,19 @@ function getViewportOffset(e) {
     insideViewport: rect1.x1 < rect2.x2 && rect1.x2 > rect2.x1 && rect1.y1 < rect2.y2 && rect1.y2 > rect2.y1
   };
 }
+(function($){
+    var win = $(window);
+    
+    $.fn.viewportOffset = function() {
+        var offset = $(this).offset();
+        
+        return {
+            left: offset.left - win.scrollLeft(),
+            top: offset.top - win.scrollTop()
+        };
+    };
+})(jQuery);
+
 
 /* Simple JavaScript Inheritance
  * By John Resig http://ejohn.org/
@@ -117,12 +131,64 @@ Karte zeichnen
 Karte wird an Position Wien, Stephansdom - Großes Tor, zentriert
 
 ****************************************************************/
+// set center coordinates
+var centerlat = 48.20876112032762;
+var centerlon = 16.37261580746849;
+
+// set default zoom level
+var zoomLevel = 15;
 function displayMap() {
 "use strict";
 
 	$('#bouncepopup').css('display','block');
 
-var myLatlng = new google.maps.LatLng(parseFloat(48.20876112032762), parseFloat(16.37261580746849));
+	
+var mymap, marker, popup;
+
+			if(!PageProperties.map) { 	// wurde schon bei einem vorherigen Upload eine Karte erstellt?
+				mymap = L.map('popup_map').setView([parseFloat(centerlat),parseFloat(centerlon)], zoomLevel);
+				PageProperties.map=mymap;
+
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYW5keTY3ZXIiLCJhIjoiY2prbnJxNTVxMWNvYzNxbWdoNmJ0NGdxYiJ9.WYPw9rPH6_5ImIfsZOaDdA', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox.streets'
+	}).addTo(mymap);
+		} else {
+	mymap=PageProperties.map;
+	mymap.setView([parseFloat(centerlat),parseFloat(centerlon)], zoomLevel);
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+//displaying the data//
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+//create empty MarkerCluster group
+var markers = L.markerClusterGroup();
+
+//create an empty GeoJSON layer
+var dotLayer = L.geoJson(false, {
+    onEachFeature: onEachDot
+});
+
+//add dots every [dotInterval] ms until there are [dotCount] of them
+var dotIndex = 1;
+var dotCount = 500;
+
+//populate GeoJSON layer
+for (var i=dotIndex ; i< dotCount ; ++i) {
+    var newDot = make_dot(i);
+    dotLayer.addData(newDot);
+	//dotLayer.addData(newDot);
+}
+
+//add GeoJSON layer to cluster layer and display it on the map
+markers.addLayer(dotLayer);
+mymap.addLayer(markers);
+
+/*var myLatlng = new google.maps.LatLng(parseFloat(48.20876112032762), parseFloat(16.37261580746849));
 
 
   var mapOptions = {
@@ -141,8 +207,8 @@ var myLatlng = new google.maps.LatLng(parseFloat(48.20876112032762), parseFloat(
  
   	PageProperties.map = new google.maps.Map(document.getElementById("popup_map"), mapOptions);
 
-	var input = /** @type {HTMLInputElement} */document.getElementById('mpacInput');
-	PageProperties.map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+	var input = /** @type {HTMLInputElement} *///document.getElementById('mpacInput');
+	/*PageProperties.map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 	// Create a DIV to hold the control and call HomeControl()
 	PageProperties.homeControlDiv = document.createElement('div');
 	var homeControl = new HomeControl(PageProperties.homeControlDiv, PageProperties.map);
@@ -167,7 +233,7 @@ var myLatlng = new google.maps.LatLng(parseFloat(48.20876112032762), parseFloat(
 Event, wenn Karte vollständig geladen ist
 
 */
-  PageProperties.gmL.push(PageProperties.map.addListener('tilesloaded', function() {
+  /*PageProperties.gmL.push(PageProperties.map.addListener('tilesloaded', function() {
 
 		getRangePic();
   }));
@@ -195,16 +261,16 @@ Event, wenn Karte vollständig geladen ist
 	bounds.extend(place.geometry.location);
 	PageProperties.map.fitBounds(bounds);
 	PageProperties.map.setZoom(defZoom);
-  }));
+  }));*/
 }
 function hideMap() {								// Karte wieder verbergen
 "use strict";
-	for (var i=0;i<PageProperties.gmL.length;i++) {
+	/*for (var i=0;i<PageProperties.gmL.length;i++) {
 		google.maps.event.removeListener(PageProperties.gmL[i]);
 	}
 	PageProperties.gmL = [];
 	deletePicMarker();
-	document.getElementById('mpacInput').value = "";
+	document.getElementById('mpacInput').value = "";*/
 	$('#bouncepopup').css('display','none');
 	//$('bouncepopup').fold();
 }
@@ -329,41 +395,51 @@ var newsScroll = Class.extend({
 		$(window).scroll(this.scrollNews.bind(this));
 		$(window).resize(this.scrollNews.bind(this));
 	},
-	scrollNews: function (event) {
+	scrollNews: function() {
 		"use strict";
+		var x = this.comment.position();
+		PageProperties.sp3Top=x.top;
+		PageProperties.sp3With=this.comment.width();
+
 	  if (PageProperties.activeScroll === false) {
 		PageProperties.activeScroll = true;
-		var viewportOffset = getViewportOffset($('#infiniteSpinner'));
-		var wd = $(window).height(); 						// Höhe des Fensters (wird dynamisch angepasst
+		var wd = $(window).height(); 							// Höhe des Fensters (wird dynamisch angepasst
 
 		//this.top = document.viewport.getScrollOffsets().top;	// scroll-offset im Fenster - beim Scrollen erhöht sich Wert
 		this.top = $(window).scrollTop();
-		var infiniteSpinnerY = viewportOffset.top; // beim Nachladen wird Wert wieder größer
-
-		if (infiniteSpinnerY - wd < 100) {					// Ende der Liste erreicht?
-			/*var postID = $$(".block").size() - 1;
-			if(postID != this.lastIndex ){*/
-			  //this.loadPost(postID, false);					// Eintrag nachladen
-			  //this.lastIndex = $$(".block").size() - 1;
-			  if(PageProperties.lastID!==null) {this.loadPost(PageProperties.lastID, "<", false);	}		// Eintrag nachladen
+		var infiniteSpinnerY = $('#infiniteSpinner').viewportOffset().top; // beim Nachladen wird Wert wieder größer
+		var _scroll = infiniteSpinnerY - wd;
+		  
+		if (_scroll < -200) {					// Bis an das Ende der Liste gescrollt?
+	
+			  if(PageProperties.lastID!==null) {	// Eintrag nachladen
+				  //console.log("End of List: "+_scroll+" LastID: "+PageProperties.lastID);
+				  this.loadPost(PageProperties.lastID, "<", false);
+			  }	else {
+				  console.log('EOF');
+			  }
 			//}
 	  	}
 		var e = this.comment;
-		if (this.top+wd-this.header >= this.comh) {
+		  x = $( "#newsfeed" ).viewportOffset().top;
+		  var y = $( "#endcomment" ).viewportOffset().top;
+		  _scroll = y+x;
+		if (_scroll < 100) {
         // if so, ad the fixed class
-        //Element.addClassName(e, 'fixed');
-		//e.fixed.style.top = this.top+wd-this.header + 'px';
+ 
 		  if (!this.isfixed) {
 			this.isfixed = true;
-			var pos = this.comh-wd;
-			e.removeClass('comment').addClass('comment-fixed');
-			e.css('top', '-'+pos+'px');
+			var htmlFixed=e.html();							// HTML der Kommentarleiste holen
+			PageProperties.sp3Top = e.viewportOffset().top;
+
+			e.html("<div id='fixit' style='position: fixed !important; top:"+PageProperties.sp3Top+"px; width:"+PageProperties.sp3With+"px'>"+htmlFixed+"</div>");
 		  }
 
-        } else {
+        } else if (_scroll >= 100 && this.isfixed) {
         	// otherwise remove it
 			this.isfixed = false;
-			e.removeClass('comment-fixed').addClass('comment');
+			var htmlMove=$("#fixit").html();
+			e.html(htmlMove);
       	}
 		  PageProperties.activeScroll = false;
 	  }
@@ -380,15 +456,14 @@ var newsScroll = Class.extend({
 	*************************************************************/
 	loadPost: function(postID, operator, position) {
 		"use strict";
-		console.log("loadPostPostID: "+postID);
+		//console.log("loadPostPostID: "+postID);
 		/*
 			bei komplexem Aufbau von sql bei suche eines Posts nach ganz genauen
 			Kriterien, eventuell die Erstellung von sql in eigene Funktion
 			auslagern!
 		*/
 		var sql = "SELECT postID, profileID, dateMake, type, pictureName, pictureOrgName, latitude, longitude, description FROM posts WHERE postID "+operator+" "+postID+" ORDER BY postID DESC LIMIT 1";
-
-		$.post("../script/loadpost.php",
+		$.post("../../script/loadpost.php",
  	 		{lim: 1, sql: sql, output: 'browser' },
 			function(html, status) {
     	  					if (html !== "") 
@@ -399,18 +474,21 @@ var newsScroll = Class.extend({
 									{ json-werte }<div der geladenen postings...>
 								*/
 								var adata = jQuery.parseJSON(html.slice(0, html.search('}')+1));
-    	  						if (adata.success && adata.lastID !== null)  
+    	  						if (adata.success && adata.lastID !== 0)  
     	  						{
 								  if (position) {
-							//$("newsfeed").insert({after: html.slice(html.search('}')+1) });
 									  $('#newsfeed').after(html.slice(html.search('}')+1));
 									} else {
-									  $("#infiniteSpinner").before(html.slice(html.search('}')+1));
+									  $('#post'+postID).after(html.slice(html.search('}')+1));
 								  }
 								  MagicZoom.refresh();
-								  PageProperties.lastID = adata.lastID;
-								  console.log("lastID: "+PageProperties.lastID);
+									console.log("nachgeladen");
 								}
+								PageProperties.lastID = adata.lastID;
+								if(adata.lastID === 0) {	// Keine Posts mehr zum Nachladen vorhanden
+									$('#eof').html('<button class="Button__button___2b6e    Button__type--local___1PIMj   talk-load-more-button">Keine weiteren Einträge vorhanden</button>');
+								}
+								
 							}
 			});
 	}
@@ -508,7 +586,7 @@ function write_new_posting(profileID, pictureName, latitude, longitude, pictext)
 
 function max_postID(table,field){
 	"use strict";
-	$.post("../script/max_postID_sql.php",
+	$.post("../../script/max_postID_sql.php",
  	 		{table: table, field: field },
 			function(data, status) {
 				var adata = jQuery.parseJSON(data);
@@ -690,4 +768,52 @@ function kmm_get_scroll_direction() {
 		return_obj.y = 'up';
 	}
 	return return_obj;
+}
+/////////////////////////////////////////////////////////////////////////////////////////////
+//styling functions//
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+function onEachDot(feature, layer) {
+    layer.bindPopup('<table style="width:150px"><tbody><tr><td><b>Name:</b></td><td>' + feature.properties.popup + '</td></tr><tr><td><b>Year:</b></td><td>' + feature.properties.year + '</td></tr><tr><td><b>Size:</b></td><td>' + Math.round(feature.properties.size) + '</td></tr></tbody></table>');
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+//functions to great synthetic GeoJSON//
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+//cheapo normrand function
+function normish(mean, range) {
+    var num_out = ((Math.random() + Math.random() + Math.random() + Math.random() + Math.random() + Math.random() + Math.random() + Math.random() - 4) / 4) * range + mean;
+    return num_out;
+}
+
+//create geojson data with random ~normal distribution
+function make_dot(id) {
+
+    //set up random variables
+    x = normish(0, .1);
+    y = normish(0, .1);
+
+    //create points randomly distributed about center coordinates
+    var g = {
+        "type": "Point",
+            "coordinates": [((x * 0.11) + centerlon), ((y * 0.1) + centerlat)]
+    };
+
+    //create feature properties, roughly proportional to distance from center coordinates
+    var p = {
+        "id": id,
+            "popup": "Dot_" + id,
+            "year": parseInt(Math.sqrt(x * x + y * y) * 60 * (1 - Math.random() / 1.5) + 1900),
+            "size": Math.round((parseFloat(Math.abs((normish(y*y, 2) + normish(x*x, 2)) * 50) + 10)) * 100) / 100
+    };
+
+    //create features with proper geojson structure        
+    dot = {
+    	"type": "Feature",
+		"geometry": g,
+		"properties": p
+    };
+    return dot;
+
 }

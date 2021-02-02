@@ -4571,8 +4571,8 @@ var Zoom = function ($) {
   // wait for dom ready (incase script included before body)
 
 
-  $(function () {
+ $(function () {
     new ZoomService().listen();
-  });
+  }); 
 }(jQuery);
 }();

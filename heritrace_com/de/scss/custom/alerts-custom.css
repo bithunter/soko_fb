@@ -1,7 +1,7 @@
 /*
 Error: Undefined mixin 'alert-variant'.
-        on line 6 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/alerts-custom.scss, in `alert-variant'
-        from line 6 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/alerts-custom.scss
+        on line 6 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/alerts-custom.scss, in `alert-variant'
+        from line 6 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/alerts-custom.scss
 
 1: //
 2: // Custom alerts
@@ -16,8 +16,8 @@ Error: Undefined mixin 'alert-variant'.
 11:     color: #fff;
 
 Backtrace:
-/Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/alerts-custom.scss:6:in `alert-variant'
-/Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/alerts-custom.scss:6
+/Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/alerts-custom.scss:6:in `alert-variant'
+/Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/alerts-custom.scss:6
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/stack.rb:98:in `block in with_mixin'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/stack.rb:135:in `with_frame'
@@ -65,4 +65,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'alert-variant'.\A         on line 6 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/alerts-custom.scss, in `alert-variant'\A         from line 6 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/alerts-custom.scss\A \A 1: //\A 2: // Custom alerts\A 3: //\A 4: \A 5: .alert-dark {\A 6:   @include alert-variant(rgba(0,0,0,.9), rgba(0,0,0,.8), #fff);\A 7:   .close {\A 8:     text-shadow: 0 1px 0 #000;\A 9:   }\A 10:   .close:hover, .close:focus {\A 11:     color: #fff;"; }
+  content: "Error: Undefined mixin 'alert-variant'.\A         on line 6 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/alerts-custom.scss, in `alert-variant'\A         from line 6 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/alerts-custom.scss\A \A 1: //\A 2: // Custom alerts\A 3: //\A 4: \A 5: .alert-dark {\A 6:   @include alert-variant(rgba(0,0,0,.9), rgba(0,0,0,.8), #fff);\A 7:   .close {\A 8:     text-shadow: 0 1px 0 #000;\A 9:   }\A 10:   .close:hover, .close:focus {\A 11:     color: #fff;"; }

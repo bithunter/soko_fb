@@ -1,6 +1,6 @@
 /*
 Error: Undefined variable: "$gray-500".
-        on line 12 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/media-list-users.scss
+        on line 12 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/media-list-users.scss
 
 7:     width: 42px;
 8:     margin-right: 5px;
@@ -15,7 +15,7 @@ Error: Undefined variable: "$gray-500".
 17:   .btn.pull-right {
 
 Backtrace:
-/Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/media-list-users.scss:12
+/Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/media-list-users.scss:12
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -72,4 +72,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$gray-500\".\A         on line 12 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/media-list-users.scss\A \A 7:     width: 42px;\A 8:     margin-right: 5px;\A 9:     border-radius: 100%;\A 10:   }\A 11:   .media-body-secondary {\A 12:     color: $gray-500;\A 13:   }\A 14:   .media-body p:last-child {\A 15:     margin-bottom :0;\A 16:   }\A 17:   .btn.pull-right {"; }
+  content: "Error: Undefined variable: \"$gray-500\".\A         on line 12 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/media-list-users.scss\A \A 7:     width: 42px;\A 8:     margin-right: 5px;\A 9:     border-radius: 100%;\A 10:   }\A 11:   .media-body-secondary {\A 12:     color: $gray-500;\A 13:   }\A 14:   .media-body p:last-child {\A 15:     margin-bottom :0;\A 16:   }\A 17:   .btn.pull-right {"; }

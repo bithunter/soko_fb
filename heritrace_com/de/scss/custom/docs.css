@@ -1,6 +1,6 @@
 /*
 Error: $color: 'theme-color("primary")' is not a color for `darken'
-        on line 29 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/docs.scss
+        on line 29 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/docs.scss
 
 24:   padding-bottom: 60px;
 25:   margin-bottom: 30px;
@@ -15,10 +15,10 @@ Error: $color: 'theme-color("primary")' is not a color for `darken'
 34:     line-height: 1;
 
 Backtrace:
-/Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/docs.scss:29
+/Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/docs.scss:29
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/funcall.rb:315:in `reformat_argument_error'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/funcall.rb:162:in `rescue in _perform'
-/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/funcall.rb:132:in `_perform'
+/Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/funcall.rb:131:in `_perform'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/funcall.rb:186:in `perform_arg'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/funcall.rb:133:in `block in _perform'
@@ -71,4 +71,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: $color: 'theme-color(\"primary\")' is not a color for `darken'\A         on line 29 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/docs.scss\A \A 24:   padding-bottom: 60px;\A 25:   margin-bottom: 30px;\A 26:   font-size: 20px;\A 27:   color: #fff;\A 28:   background-color: theme-color(\"primary\");\A 29:   background-image: linear-gradient(to bottom, darken(theme-color(\"primary\"), 15%), theme-color(\"primary\"));\A 30: \A 31:   h1 {\A 32:     margin-bottom: 5px;\A 33:     font-size: 40px;\A 34:     line-height: 1;"; }
+  content: "Error: $color: 'theme-color(\"primary\")' is not a color for `darken'\A         on line 29 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/docs.scss\A \A 24:   padding-bottom: 60px;\A 25:   margin-bottom: 30px;\A 26:   font-size: 20px;\A 27:   color: #fff;\A 28:   background-color: theme-color(\"primary\");\A 29:   background-image: linear-gradient(to bottom, darken(theme-color(\"primary\"), 15%), theme-color(\"primary\"));\A 30: \A 31:   h1 {\A 32:     margin-bottom: 5px;\A 33:     font-size: 40px;\A 34:     line-height: 1;"; }

@@ -1,6 +1,6 @@
 /*
 Error: Undefined variable: "$jumbotron-padding".
-        on line 6 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/profile-header.scss
+        on line 6 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/profile-header.scss
 
 1: .profile-header {
 2:   position: relative;
@@ -15,7 +15,7 @@ Error: Undefined variable: "$jumbotron-padding".
 11: }
 
 Backtrace:
-/Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/profile-header.scss:6
+/Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/profile-header.scss:6
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/operation.rb:67:in `_perform'
@@ -63,4 +63,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$jumbotron-padding\".\A         on line 6 of /Users/Andy/Google Drive/heritrace_nw/heritrace_com/de/scss/custom/profile-header.scss\A \A 1: .profile-header {\A 2:   position: relative;\A 3:   display: table;\A 4:   width: 100%;\A 5:   height: 300px;\A 6:   padding-bottom: ($jumbotron-padding * 1.6);\A 7:   margin-bottom: 0;\A 8:   text-align: center;\A 9:   background-size: cover;\A 10:   border: 0;\A 11: }"; }
+  content: "Error: Undefined variable: \"$jumbotron-padding\".\A         on line 6 of /Volumes/Mac_01/myWeb/heritrace_up/heritrace_com/de/scss/custom/profile-header.scss\A \A 1: .profile-header {\A 2:   position: relative;\A 3:   display: table;\A 4:   width: 100%;\A 5:   height: 300px;\A 6:   padding-bottom: ($jumbotron-padding * 1.6);\A 7:   margin-bottom: 0;\A 8:   text-align: center;\A 9:   background-size: cover;\A 10:   border: 0;\A 11: }"; }
